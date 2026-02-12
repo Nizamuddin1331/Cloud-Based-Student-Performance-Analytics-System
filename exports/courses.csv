@@ -1,0 +1,11 @@
+course_id,course_code,course_name,department,credits,difficulty_level
+1,CS101,Introduction to Programming,Computer Science,3,Beginner
+2,CS201,Data Structures,Computer Science,4,Intermediate
+3,CS301,Algorithms,Computer Science,4,Advanced
+4,MATH101,Calculus I,Mathematics,4,Beginner
+5,MATH201,Linear Algebra,Mathematics,3,Intermediate
+6,PHYS101,Physics I,Physics,4,Beginner
+7,ENG101,Engineering Fundamentals,Engineering,3,Beginner
+8,BUS101,Business Analytics,Business,3,Intermediate
+9,CS202,Database Systems,Computer Science,3,Intermediate
+10,CS302,Machine Learning,Computer Science,4,Advanced

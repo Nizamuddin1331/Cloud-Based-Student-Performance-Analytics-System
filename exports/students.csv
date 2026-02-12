@@ -1,0 +1,51 @@
+student_id,first_name,last_name,email,enrollment_date,grade_level,department
+1,John,Hernandez,john.hernandez0@university.edu,2024-04-08,1,Mathematics
+2,David,Smith,david.smith1@university.edu,2023-08-18,1,Business
+3,Ava,Miller,ava.miller2@university.edu,2024-10-14,2,Physics
+4,David,Johnson,david.johnson3@university.edu,2022-06-27,3,Business
+5,James,Martinez,james.martinez4@university.edu,2023-05-19,2,Mathematics
+6,Emma,Anderson,emma.anderson5@university.edu,2022-09-07,3,Mathematics
+7,James,Brown,james.brown6@university.edu,2024-11-18,4,Physics
+8,Robert,Wilson,robert.wilson7@university.edu,2024-07-30,1,Physics
+9,Daniel,Martinez,daniel.martinez8@university.edu,2023-05-22,1,Business
+10,Charlotte,Davis,charlotte.davis9@university.edu,2024-02-06,1,Computer Science
+11,Michael,Wilson,michael.wilson10@university.edu,2022-04-14,3,Physics
+12,David,Hernandez,david.hernandez11@university.edu,2023-05-30,3,Physics
+13,James,Johnson,james.johnson12@university.edu,2023-09-16,2,Business
+14,James,Lopez,james.lopez13@university.edu,2023-12-24,2,Mathematics
+15,Ava,Rodriguez,ava.rodriguez14@university.edu,2023-03-17,4,Physics
+16,Isabella,Jones,isabella.jones15@university.edu,2024-10-26,1,Physics
+17,Charlotte,Garcia,charlotte.garcia16@university.edu,2024-11-18,4,Business
+18,James,Martinez,james.martinez17@university.edu,2023-10-09,3,Business
+19,Robert,Smith,robert.smith18@university.edu,2023-06-08,1,Physics
+20,Isabella,Lopez,isabella.lopez19@university.edu,2024-10-11,2,Business
+21,David,Jones,david.jones20@university.edu,2022-05-17,4,Computer Science
+22,David,Rodriguez,david.rodriguez21@university.edu,2025-01-10,1,Computer Science
+23,William,Miller,william.miller22@university.edu,2024-03-03,4,Mathematics
+24,Amelia,Jones,amelia.jones23@university.edu,2023-05-20,1,Business
+25,Charlotte,Miller,charlotte.miller24@university.edu,2022-11-10,4,Computer Science
+26,Olivia,Anderson,olivia.anderson25@university.edu,2024-01-15,4,Engineering
+27,Emma,Garcia,emma.garcia26@university.edu,2022-04-02,4,Engineering
+28,Michael,Brown,michael.brown27@university.edu,2023-09-28,3,Physics
+29,John,Miller,john.miller28@university.edu,2023-09-05,4,Engineering
+30,Daniel,Garcia,daniel.garcia29@university.edu,2023-03-13,1,Physics
+31,Isabella,Hernandez,isabella.hernandez30@university.edu,2022-04-20,4,Business
+32,David,Brown,david.brown31@university.edu,2023-09-25,3,Computer Science
+33,Charlotte,Anderson,charlotte.anderson32@university.edu,2023-06-04,4,Physics
+34,Daniel,Rodriguez,daniel.rodriguez33@university.edu,2022-02-22,2,Physics
+35,Charlotte,Brown,charlotte.brown34@university.edu,2023-06-19,3,Engineering
+36,Daniel,Brown,daniel.brown35@university.edu,2024-10-26,1,Business
+37,Ava,Smith,ava.smith36@university.edu,2022-10-02,4,Computer Science
+38,Emma,Williams,emma.williams37@university.edu,2025-01-12,1,Mathematics
+39,John,Miller,john.miller38@university.edu,2023-03-23,3,Mathematics
+40,Sophia,Garcia,sophia.garcia39@university.edu,2023-01-10,1,Computer Science
+41,Daniel,Anderson,daniel.anderson40@university.edu,2022-11-20,2,Business
+42,Olivia,Hernandez,olivia.hernandez41@university.edu,2023-11-19,3,Business
+43,James,Garcia,james.garcia42@university.edu,2023-04-22,4,Business
+44,Sophia,Williams,sophia.williams43@university.edu,2023-01-04,1,Business
+45,Robert,Smith,robert.smith44@university.edu,2024-11-07,3,Mathematics
+46,John,Smith,john.smith45@university.edu,2024-04-03,4,Business
+47,John,Garcia,john.garcia46@university.edu,2025-02-05,1,Computer Science
+48,David,Gonzalez,david.gonzalez47@university.edu,2023-10-23,2,Mathematics
+49,David,Lopez,david.lopez48@university.edu,2022-04-26,3,Computer Science
+50,David,Davis,david.davis49@university.edu,2022-04-04,1,Computer Science
