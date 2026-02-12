@@ -1,0 +1,206 @@
+{
+  "gcp": {
+    "project_id": "student-analytics-project",
+    "region": "us-central1",
+    "zone": "us-central1-a"
+  },
+  "cloud_sql": {
+    "instance_name": "student-performance-db",
+    "database_version": "POSTGRES_14",
+    "tier": "db-f1-micro",
+    "storage_size_gb": 10,
+    "backup_enabled": true,
+    "backup_start_time": "03:00",
+    "database_name": "student_analytics",
+    "database_flags": [
+      {
+        "name": "max_connections",
+        "value": "100"
+      }
+    ]
+  },
+  "cloud_storage": {
+    "bucket_name": "student-analytics-data",
+    "storage_class": "STANDARD",
+    "location": "US",
+    "folders": [
+      "raw-data/",
+      "processed-data/",
+      "analytics-reports/",
+      "backups/"
+    ]
+  },
+  "cloud_functions": {
+    "function_name": "process-student-data",
+    "runtime": "python39",
+    "entry_point": "process_data",
+    "memory": "256MB",
+    "timeout": "60s",
+    "trigger_type": "http",
+    "environment_variables": {
+      "DB_NAME": "student_analytics",
+      "BUCKET_NAME": "student-analytics-data"
+    }
+  },
+  "bigquery": {
+    "dataset_id": "student_performance_analytics",
+    "location": "US",
+    "tables": {
+      "students": {
+        "schema": [
+          {
+            "name": "student_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "first_name",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "last_name",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "email",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "enrollment_date",
+            "type": "DATE",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "grade_level",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "department",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          }
+        ]
+      },
+      "courses": {
+        "schema": [
+          {
+            "name": "course_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "course_code",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "course_name",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "department",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "credits",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "difficulty_level",
+            "type": "STRING",
+            "mode": "REQUIRED"
+          }
+        ]
+      },
+      "grades": {
+        "schema": [
+          {
+            "name": "grade_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "student_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "assessment_id",
+            "type": "INTEGER",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "score",
+            "type": "FLOAT",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "submission_date",
+            "type": "DATE",
+            "mode": "REQUIRED"
+          },
+          {
+            "name": "feedback",
+            "type": "STRING",
+            "mode": "NULLABLE"
+          }
+        ]
+      }
+    }
+  },
+  "app_engine": {
+    "service": "default",
+    "runtime": "python39",
+    "instance_class": "F1",
+    "automatic_scaling": {
+      "target_cpu_utilization": 0.65,
+      "min_instances": 1,
+      "max_instances": 3
+    },
+    "environment_variables": {
+      "CLOUD_SQL_CONNECTION_NAME": "student-analytics-project:us-central1:student-performance-db"
+    }
+  },
+  "cloud_scheduler": {
+    "job_name": "daily-analytics-report",
+    "schedule": "0 8 * * *",
+    "time_zone": "America/New_York",
+    "description": "Generate daily student performance analytics report"
+  },
+  "monitoring": {
+    "alert_policies": [
+      {
+        "name": "high-database-cpu",
+        "condition": "resource.type = cloudsql_database AND metric.type = cloudsql.googleapis.com/database/cpu/utilization > 0.8",
+        "notification_channels": [
+          "email"
+        ]
+      },
+      {
+        "name": "low-student-performance",
+        "condition": "custom.metric.type = student_performance_avg < 70",
+        "notification_channels": [
+          "email"
+        ]
+      }
+    ],
+    "dashboards": [
+      {
+        "name": "Student Performance Dashboard",
+        "widgets": [
+          "Average GPA Trend",
+          "Course Enrollment",
+          "At-Risk Students",
+          "Department Performance"
+        ]
+      }
+    ]
+  }
+}
